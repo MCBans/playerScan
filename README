@@ -1,0 +1,8 @@
+PlayerScan
+
+Cycle through all the players on the server!
+
+FORMAT /scan [seconds]
+-- seconds to wait at each player
+
+PERMISSION ( BukkitPerms ) "playerScan" node.
