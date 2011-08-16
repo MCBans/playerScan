@@ -30,7 +30,7 @@ public class thread extends Thread {
 				if(plugin.getServer().getPlayer(target)!=null){
 					g = plugin.getServer().getPlayer(h).getLocation();
 					plugin.getServer().getPlayer(target).teleport(g);
-					plugin.getServer().getPlayer(target).sendMessage("["+ChatColor.DARK_AQUA+"Scan"+ChatColor.WHITE+"]"+ChatColor.LIGHT_PURPLE+" now at "+h);
+					plugin.getServer().getPlayer(target).sendMessage("["+ChatColor.DARK_AQUA+"Scan"+ChatColor.WHITE+"]"+ChatColor.LIGHT_PURPLE+" Now at "+h);
 				}else{
 					continue;
 				}
@@ -40,7 +40,8 @@ public class thread extends Thread {
 			try {
 				Thread.sleep(callBacInterval);
 			} catch (InterruptedException e) {
-				plugin.getServer().getPlayer(target).sendMessage("["+ChatColor.DARK_AQUA+"Scan"+ChatColor.WHITE+"]"+ChatColor.LIGHT_PURPLE+" stopped!");
+				x=200;
+				plugin.getServer().getPlayer(target).sendMessage("["+ChatColor.DARK_AQUA+"Scan"+ChatColor.WHITE+"]"+ChatColor.LIGHT_PURPLE+" Stopped!");
 			}
 		}
 	}
