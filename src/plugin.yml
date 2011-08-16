@@ -1,0 +1,8 @@
+name: playerScan
+main: com.firestar.playerScan.main
+version: 1
+author: Firestar
+commands:
+  scan:
+    description: Scan through all players for x seconds each
+    usage: /<command> [seconds]
