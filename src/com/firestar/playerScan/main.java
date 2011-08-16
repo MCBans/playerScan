@@ -78,12 +78,10 @@ public class main extends JavaPlugin {
 					}
 					cmdhandle = new thread(tmpPlayerList, Integer.valueOf(args[0]),this,player.getName());
 					mm.put(player.getName(), cmdhandle);
-					mm.get(player.getName()).run();
+					mm.get(player.getName()).start();
 				
 			}else if(args[0].equalsIgnoreCase("stop")){
-				if(player.hasPermission("playerScan")){
-					mm.get(player.getName()).interrupt();
-				}
+				mm.get(player.getName()).interrupt();
 			}
 		}else{
 			player.sendMessage("["+ChatColor.DARK_AQUA+"Scan"+ChatColor.WHITE+"] "+ChatColor.DARK_RED+" insufficient permissions!");

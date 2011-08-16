@@ -25,21 +25,23 @@ public class thread extends Thread {
 		int length=playerList.size();
 		Location g = null;
 		for( Integer x = 0; x < length; x++ ){
-			
 			String h = playerList.get(x);
 			if(h!=target){
-				g = plugin.getServer().getPlayer(h).getLocation();
-				plugin.getServer().getPlayer(target).teleport(g);
-				plugin.getServer().getPlayer(target).sendMessage("["+ChatColor.DARK_AQUA+"Scan"+ChatColor.WHITE+"] "+ChatColor.LIGHT_PURPLE+" now at "+h);
+				if(plugin.getServer().getPlayer(target)!=null){
+					g = plugin.getServer().getPlayer(h).getLocation();
+					plugin.getServer().getPlayer(target).teleport(g);
+					plugin.getServer().getPlayer(target).sendMessage("["+ChatColor.DARK_AQUA+"Scan"+ChatColor.WHITE+"]"+ChatColor.LIGHT_PURPLE+" now at "+h);
+				}else{
+					continue;
+				}
 			}else{
 				continue;
 			}
 			try {
 				Thread.sleep(callBacInterval);
 			} catch (InterruptedException e) {
-				e.printStackTrace();
+				plugin.getServer().getPlayer(target).sendMessage("["+ChatColor.DARK_AQUA+"Scan"+ChatColor.WHITE+"]"+ChatColor.LIGHT_PURPLE+" stopped!");
 			}
 		}
-		
 	}
 }
