@@ -5,4 +5,7 @@ Cycle through all the players on the server!
 FORMAT /scan [seconds]
 -- seconds to wait at each player
 
+FORMAT /scan stop
+-- stops at the current player
+
 PERMISSION ( BukkitPerms ) "playerScan" node.
