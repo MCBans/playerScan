@@ -22,6 +22,7 @@ public class main extends JavaPlugin {
 	}
 	public void onEnable() {
 		Message("Enabled playerScan");
+		setupPermissions();
 	}
 	public boolean isInt(String input){
 		try {
@@ -40,6 +41,7 @@ public class main extends JavaPlugin {
 		if(Permissions == null) {
 		    if(test != null) {
 		    	Permissions = ((Permissions)test).getHandler();
+		    	Message("Found Permission Bridge!");
 		    } else {
 		    }
 		}
